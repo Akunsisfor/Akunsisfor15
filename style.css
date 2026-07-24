@@ -1,0 +1,494 @@
+/* ==========================================
+   1. RESET & VARIABLE DECLARATION
+   ========================================== */
+:root {
+    --primary: #3b82f6;
+    --primary-hover: #6b655d;
+    --bg-main: #cab58d;
+    --sidebar-bg: #423a2f;
+    --card-bg: #ffffff;
+    --border: #e2e8f0;
+    --text-dark: #212121;
+    --text-muted: #2e3033;
+    --gold: #d97706;
+    --gold-light: #f59e0b;
+    --success: #25d366;
+    --success-hover: #1da851;
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg-main);
+}
+
+/* ==========================================
+   2. SIDEBAR (SAMAKAN UNTUK SEMUA HALAMAN)
+   ========================================== */
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    color: #ffffff;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.profile-card {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #1e293b;
+    margin-bottom: 25px;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+    margin: 0 auto 12px auto;
+    display: block;
+}
+
+.brand-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.store-tagline {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-bottom: 8px;
+}
+
+.status {
+    font-size: 0.8rem;
+    color: #4ade80;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1;
+}
+
+.menu a {
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.menu a.active, 
+.menu a:hover {
+    background-color: #585a5d;
+    color: #a5a7a8;
+}
+
+.sidebar-footer {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-align: center;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+/* ==========================================
+   3. MAIN CONTENT
+   ========================================== */
+.main-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.top-header {
+    background-color: var(--card-bg);
+    padding: 20px 25px;
+    border-radius: var(--radius);
+    margin-bottom: 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.top-header h1 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.top-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   4. PRODUCT GRID
+   ========================================== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 18px;
+}
+
+.category {
+    font-size: 0.75rem;
+    background-color: #e0f2fe;
+    color: #0369a1;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.product-card h3 {
+    font-size: 1.1rem;
+    margin: 10px 0 6px 0;
+    color: var(--text-dark);
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #16a34a;
+    margin-bottom: 8px;
+}
+
+.desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.btn-buy {
+    display: block;
+    text-align: center;
+    background-color: var(--success);
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.btn-buy:hover {
+    background-color: var(--success-hover);
+}
+
+/* ==========================================
+   5. ABOUT PAGE SECTION
+   ========================================== */
+.header-card {
+    background-color: #8c7762;         /* Warna background kotak judul */
+    border: 1px solid #e2e8f0;         /* Garis tepi halus */
+    border-radius: 12px;               /* Sudut melengkung */
+    padding: 24px 30px;                /* Ruang di dalam kotak */
+    margin-bottom: 24px;               /* Jarak ke kotak Visi Misi di bawahnya */
+    text-align: center;                /* Memaksa Judul & Teks di TENGAH */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03); /* Bayangan tipis agar elegan */
+}
+
+.header-card h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #bec7dd;                    /* Warna teks judul */
+    margin-bottom: 6px;
+}
+
+.header-card p {
+    color: #2c2d2e;                    /* Warna deskripsi sub-judul */
+    font-size: 0.95rem;
+}
+
+/* Kartu Putih di dalam pembungkus */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.about-card {
+    background: #ffffff;      /* Warna kartu dalam dibuat putih bersih */
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 28px 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.about-card h2 {
+    color: #d97706;
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-card p {
+    color: #334155;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.about-card ul {
+    color: #334155;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding-left: 20px;
+}
+
+.about-card ul li {
+    margin-bottom: 10px;
+}
+
+.about-card ul li::marker {
+    color: #d97706;
+}
+
+/* Kartu Informasi Tambahan */
+.store-info-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px 30px;
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    text-align: center;      /* Opsi: membuat teks info di bawah ikut ke tengah */
+}
+
+.info-item .label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #2f3338;
+    margin-bottom: 6px;
+}
+
+.info-item .value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* ==========================================
+   6. RESPONSIVE BREAKPOINTS
+   ========================================== */
+@media (max-width: 800px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== LINGKUNGAN DARK THEME HUBU NGI KAMI ===== */
+
+/* Header Card Atas */
+.header-card {
+  background-color: #f1f1f2;
+  border: 1px solid #f0f1f3;
+  border-top: 2px solid #302a19; /* Garis emas di bagian atas */
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+}
+
+.header-card h1 {
+  color: #040b20;
+  font-family: 'Serif', Georgia, serif; /* Gaya font judul seperti gambar */
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.header-card p {
+  color: #1f2022;
+  font-size: 0.95rem;
+}
+
+/* Grid Pembungkus */
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 800px) {
+  .contact-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Container Kartu */
+.contact-card {
+  background-color: #f4f4f6;
+  border: 1px solid #c0c2c5;
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Judul & Subjudul Kartu */
+.card-title {
+  color: #0e0d0d; /* Warna Emas */
+  font-family: 'Serif', Georgia, serif;
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.card-subtitle {
+  color: #171819;
+  font-size: 0.88rem;
+  margin-bottom: 20px;
+}
+
+/* Item List Kontak */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.contact-list .item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: #eaeaed;
+  border: 1px solid #1e222d;
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+
+.contact-list .item .ic {
+  font-size: 1.2rem;
+}
+
+.contact-list .item .t {
+  font-size: 0.75rem;
+  color: #1e1e1f;
+  margin-bottom: 2px;
+}
+
+.contact-list .item .v {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Form Styling */
+.quick-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: #1c1c1d;
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: #f2f2f5;
+  border: 1px solid #1e222d;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #25d366;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* Tombol Hijau Khas WhatsApp */
+.btn-green {
+  background-color: #25d366;
+  color: #000000;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: auto; /* Mendorong tombol selalu di bawah */
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-green:hover {
+  background-color: #20bd5a;
+  transform: translateY(-1px);
+}
