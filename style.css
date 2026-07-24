@@ -363,132 +363,46 @@ body {
   gap: 24px;
 }
 
+/* ==========================================
+   6. RESPONSIVE BREAKPOINTS (DIBUAT TETAP BERDAMPINGAN)
+   ========================================== */
 @media (max-width: 800px) {
-  .contact-wrap {
-    grid-template-columns: 1fr;
-  }
-}
+    body {
+        flex-direction: row; /* Memaksa tetap menyamping di HP */
+    }
 
-/* Container Kartu */
-.contact-card {
-  background-color: #f4f4f6;
-  border: 1px solid #c0c2c5;
-  border-radius: 12px;
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-}
+    /* Menyesuaikan lebar sidebar agar muat & proporsional di layar HP */
+    .sidebar {
+        width: 140px; /* Ukuran sidebar lebih kecil di HP */
+        padding: 15px 10px;
+    }
 
-/* Judul & Subjudul Kartu */
-.card-title {
-  color: #0e0d0d; /* Warna Emas */
-  font-family: 'Serif', Georgia, serif;
-  font-size: 1.3rem;
-  margin-bottom: 6px;
-}
+    /* Menyesuaikan profil & menu agar tidak makan tempat di layar HP */
+    .profile-img {
+        width: 50px;
+        height: 50px;
+    }
 
-.card-subtitle {
-  color: #171819;
-  font-size: 0.88rem;
-  margin-bottom: 20px;
-}
+    .brand-name {
+        font-size: 0.85rem;
+    }
 
-/* Item List Kontak */
-.contact-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 24px;
-}
+    .store-tagline, .status {
+        font-size: 0.7rem;
+    }
 
-.contact-list .item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background-color: #eaeaed;
-  border: 1px solid #1e222d;
-  border-radius: 10px;
-  padding: 14px 18px;
-}
+    .menu a {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
 
-.contact-list .item .ic {
-  font-size: 1.2rem;
-}
+    .main-content {
+        padding: 15px; /* Mengurangi padding ruang utama */
+    }
 
-.contact-list .item .t {
-  font-size: 0.75rem;
-  color: #1e1e1f;
-  margin-bottom: 2px;
-}
-
-.contact-list .item .v {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #1a1a1a;
-}
-
-/* Form Styling */
-.quick-form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form-group label {
-  font-size: 0.85rem;
-  color: #1c1c1d;
-}
-
-.form-group input,
-.form-group textarea {
-  background-color: #f2f2f5;
-  border: 1px solid #1e222d;
-  border-radius: 8px;
-  padding: 12px 14px;
-  color: #ffffff;
-  font-size: 0.9rem;
-  outline: none;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #25d366;
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 110px;
-}
-
-/* Tombol Hijau Khas WhatsApp */
-.btn-green {
-  background-color: #25d366;
-  color: #000000;
-  font-weight: 700;
-  font-size: 0.95rem;
-  border: none;
-  border-radius: 8px;
-  padding: 14px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: auto; /* Mendorong tombol selalu di bawah */
-  transition: background-color 0.2s, transform 0.1s;
-}
-
-.btn-green:hover {
-  background-color: #20bd5a;
-  transform: translateY(-1px);
+    /* Grid kartu Visi Misi & Kontak tetap aman di layar sempit */
+    .about-grid, 
+    .contact-wrap {
+        grid-template-columns: 1fr;
+    }
 }
